@@ -13,19 +13,19 @@ public class Octave {
 	}
 
 	public void setOrder(int order) {
-
+		this.order = order;
 	}
 
 	public void setNotes(MusicalNote[] notes) {
-
+		System.arraycopy(notes, 0, this.notes, 0, 8);
 	}
 
 	public int getOrder() {
 		return 0;
 	}
 
-	public Arrays[] getNotes() {
-		return null;
+	public MusicalNote[] getNotes() {
+		return notes;
 	}
 
 }

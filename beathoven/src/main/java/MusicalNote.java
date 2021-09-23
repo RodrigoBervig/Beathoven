@@ -1,32 +1,18 @@
 public class MusicalNote {
 
-	private audioStream note;
+	private String note;
 
-	private String name;
-
-	public MusicalNote() {
-
+	// in jfugue, the notation for a MusicalNote is of the form "B5", where B is the note and 5 is the octave
+	public MusicalNote(String note, int octave) {
+		this.note = note + octave;
 	}
 
-	/**
-	 * public void setSound(audioStream s) {
-	 * this.Note = s;
-	 * return;}
-	 */
-	public void setSound(audioStream sound) {
-
+	public void setSound(String note, int octave) {
+		this.note = note + octave;
 	}
 
-	public void setName() {
-
-	}
-
-	public String getName() {
-		return null;
-	}
-
-	public audioStream getSound() {
-		return null;
+	public String getSound() {
+		return note;
 	}
 
 }

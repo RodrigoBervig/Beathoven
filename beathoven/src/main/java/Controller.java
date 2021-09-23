@@ -1,17 +1,19 @@
+import org.jfugue.player.Player;
+
 public class Controller {
 
 	public Controller() {
 
 	}
 
-	public void playMusic(Array<MusicalContent> music) {
+	public void playMusic(MusicalContent[] music) {
 
 	}
 
-	private class Player {
+	private class MusicPlayer {
 
-		public Player() {
-
+		public MusicPlayer() {
+			Player player = new Player();
 		}
 
 		public void playNote(MusicalNote note) {

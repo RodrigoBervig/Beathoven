@@ -2,7 +2,7 @@ public abstract class Instrument {
 
 	private int numberOfOctaves;
 
-	private Array<Octave> notes;
+	private Octave[] notes;
 
 	private String name;
 
