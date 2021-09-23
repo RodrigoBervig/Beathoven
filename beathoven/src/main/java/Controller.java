@@ -10,19 +10,7 @@ public class Controller {
 
 	}
 
-	private class MusicPlayer {
-
-		public MusicPlayer() {
-			Player player = new Player();
-		}
-
-		public void playNote(MusicalNote note) {
-
-		}
-
-	}
-
-	public enum Commands {
+	private enum Commands {
 
 		INCREASE_BPM("BPM+"),
 		DECREASE_BPM("BPM-"),

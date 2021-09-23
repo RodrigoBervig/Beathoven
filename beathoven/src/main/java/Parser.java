@@ -4,7 +4,7 @@ public class Parser {
 
 	}
 
-	public Array<MusicalContent> parseText(String text) {
+	public MusicalContent[] parseText(String text) {
 		return null;
 	}
 
