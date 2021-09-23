@@ -24,23 +24,27 @@ public class Controller {
 
 	public enum Commands {
 
-		increaseBPM,
+		INCREASE_BPM("BPM+"),
+		DECREASE_BPM("BPM-"),
+		INCREASE_OCTAVE("T+"),
+		DECREASE_OCTAVE("T-"),
+		PLAY_INSTRUMENT("\n"),
+		INCREASE_VOLUME("+"),
+		DECREASE_VOLUME("-"),
+		SILENCE(" "),
+		PLAY_RANDOM_NOTE("?"),
+		REPEAT_NOTE("['O','o','I','i']");
+		//TODO: add a regex that checks if the command is of silence type
 
-		decreaseBPM,
+		public String commandMapping;
 
-		increaseOctave,
+		Commands(String value) {
+			this.commandMapping = value;
+		}
 
-		decreaseOctave,
-
-		playInstrument,
-
-		increaseVolume,
-
-		decreaseVolume,
-
-		playRandomNote,
-
-		repeateNote;
+		public String getCommand() {
+			return commandMapping;
+		}
 
 	}
 

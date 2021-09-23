@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Octave {
 
 	private int order;
@@ -8,8 +6,8 @@ public class Octave {
 
 	private MusicalNote musicalNote;
 
-	public Octave() {
-
+	public Octave(int order) {
+		this.order = order;
 	}
 
 	public void setOrder(int order) {
