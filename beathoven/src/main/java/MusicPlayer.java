@@ -1,11 +1,15 @@
-public class MusicPlayer {
+import org.jfugue.player.Player;
+import org.jfugue.pattern.Pattern;
 
+public class MusicPlayer {
+    Player player;
     public MusicPlayer() {
-        Player player = new Player();
+        player = new Player();
     }
 
-    public playMusic(String musicText) {
-        this.player.play(musicText);
+    public void playMusic(String musicText) {
+        Pattern pattern = new Pattern(musicText);
+        this.player.play(pattern);
     }
 
 }

@@ -15,35 +15,35 @@ public class MusicCurrentState {
 	}
 
 	public void setBPM(int bpm) {
-
+		this.bpm = bpm;
 	}
 
 	public void setVolume(int volume) {
-
+		this.volume = volume;
 	}
 
 	public void setOctaveOrder(int order) {
-
+		this.octaveOrder = order;
 	}
 
 	public void setInstrument(Instrument instrument) {
-
+		this.instrument = instrument;
 	}
 
 	public int getBPM() {
-		return 0;
+		return this.bpm;
 	}
 
 	public int getVolume() {
-		return 0;
+		return this.volume;
 	}
 
 	public int getOctaveOrder() {
-		return 0;
+		return this.octaveOrder;
 	}
 
 	public Instrument getInstrument() {
-		return null;
+		return this.instrument;
 	}
 
 	public void reset() {

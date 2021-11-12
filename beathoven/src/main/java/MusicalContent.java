@@ -2,13 +2,13 @@ public class MusicalContent {
 
 	private MusicalNote note;
 
-	private String command;
+	private String[] command = null;
 
 	public MusicalContent(MusicalNote note) {
 		this.note = note;
 	}
 
-	public MusicalContent(String command) {
+	public MusicalContent(String[] command) {
 		this.command = command;
 	}
 
@@ -16,4 +16,11 @@ public class MusicalContent {
 		return this.command == null;
 	}
 
+	public String[] getCommand() {
+		return command;
+	}
+
+	public MusicalNote getNote() {
+		return note;
+	}
 }
