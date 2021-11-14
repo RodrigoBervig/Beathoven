@@ -9,6 +9,7 @@ public class MusicPlayer {
 
     public void playMusic(String musicText) {
         Pattern pattern = new Pattern(musicText);
+        pattern.setTempo(180);
         this.player.play(pattern);
     }
 

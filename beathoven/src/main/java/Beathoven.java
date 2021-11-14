@@ -8,11 +8,10 @@ public class Beathoven {
         TextField textField = new TextField();
         Button button = new Button();
         Parser parser = new Parser();
-        Controller controller = new Controller();
+        MusicPlayer musicPlayer = new MusicPlayer();
 
         //Button pressed
-        controller.playMusic(parser.parseText("A B ; A C o G A B ! C D ? A B C ? A B C"));
-
+        musicPlayer.playMusic(parser.parseTextToJFugue("ABABABABBPM+BPM+BPM+BPM+BPM+AAAABBBBCC"));
 
         // add a while(true){} loop here
     }
