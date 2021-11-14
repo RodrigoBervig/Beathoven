@@ -12,8 +12,6 @@ public class UserInput {
     public static final String PLAY_PAN_FLUTE = ";";
     public static final String PLAY_CHURCH_ORGAN = ",";
     public static final String SET_DEFAULT_VOLUME = "-";
-    public static final String INCREASE_BPM = "BPM+";
-    public static final String DECREASE_BPM = "BPM-";
 
     public static boolean isNote(String note){
 

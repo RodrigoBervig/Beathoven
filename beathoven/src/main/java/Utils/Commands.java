@@ -28,7 +28,7 @@ public class Commands {
 
     public static String changeInstrumentCommand (int instrument){
 
-        return "I" + instrument;
+        return INSTRUMENT + instrument;
     }
 
     public static String setVolumeCommand(int volume){
@@ -36,8 +36,5 @@ public class Commands {
         return CHANGE_VOLUME + volume + ")";
     }
 
-    public static String modifyBpm(int bpm) {
-        return MODIFY_BPM + bpm;
-    }
 }
 
