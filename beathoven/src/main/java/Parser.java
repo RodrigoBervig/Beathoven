@@ -13,6 +13,7 @@ public class Parser {
 		for(int i = 0; i < text.length(); i++) {
 			String c = String.valueOf(text.charAt(i));
 			jFugueCommands += findCommand(c) + " ";
+			state.setLastUserInput(c);
 		}
 
 		return jFugueCommands;
@@ -21,7 +22,6 @@ public class Parser {
 	private String findCommand(String c){
 		String command = "";
 		if(UserInput.isNote(c)){
-			state.setLastNotePlayed(c);
 			command += c + state.getOctaveOrder();
 		}
 		else if(UserInput.isNumber(c)){
@@ -65,7 +65,11 @@ public class Parser {
 					command = Commands.changeInstrumentCommand(20);
 					break;
 				default:
-					command = state.getLastNotePlayed();
+					String lastInput = state.getLastUserInput();
+					if(UserInput.isNote(lastInput)){
+						command = lastInput + state.getOctaveOrder();
+					}
+					else command = Commands.PAUSE;
 					break;
 			}
 		}

@@ -11,7 +11,7 @@ public class Beathoven {
         MusicPlayer musicPlayer = new MusicPlayer();
 
         //Button pressed
-        musicPlayer.playMusic(parser.parseTextToJFugue("ABABABABBPM+BPM+BPM+BPM+BPM+AAAABBBBCC"));
+        musicPlayer.playMusic(parser.parseTextToJFugue("aaaaaaaaaaaa ABABABABAAB aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa CCCCCC"));
 
         // add a while(true){} loop here
     }

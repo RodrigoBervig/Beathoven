@@ -14,17 +14,13 @@ public class MusicCurrentState {
 
 	private int octaveOrder = 5;
 
-	private String lastNotePlayed;
+	private String lastUserInput = "";
 
 	private int instrument = 0;
 
 	public MusicCurrentState() {
 		this.bpm = defaultBpm;
 
-	}
-
-	public void setBPM(int bpm) {
-		this.bpm = bpm;
 	}
 
 	public void setVolume(int volume) {
@@ -73,12 +69,12 @@ public class MusicCurrentState {
 		return this.instrument;
 	}
 
-	public void setLastNotePlayed(String note) {
-		this.lastNotePlayed = note;
+	public void setLastUserInput(String input) {
+		this.lastUserInput = input;
 	}
 
-	public String getLastNotePlayed(){
-		return this.lastNotePlayed;
+	public String getLastUserInput(){
+		return this.lastUserInput;
 	}
 
 	public void reset() {
