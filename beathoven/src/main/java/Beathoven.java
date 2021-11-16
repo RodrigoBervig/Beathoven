@@ -1,18 +1,75 @@
+package com.example.testejavafx;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+
+import org.jfugue.midi.MidiFileManager;
 import org.jfugue.player.*;
 import org.jfugue.pattern.*;
-public class Beathoven {
-    public static void main(String[] args) {
 
-        // the control flux is "text field -> (button pressed) -> parser -> controller, repeat"
+public class Beathoven implements Initializable {
 
-        TextField textField = new TextField();
-        Button button = new Button();
-        Parser parser = new Parser();
-        MusicPlayer musicPlayer = new MusicPlayer();
+    FileChooser fileChooser = new FileChooser();
 
-        //Button pressed
-        musicPlayer.playMusic(parser.parseTextToJFugue("aaaaaaaaaaaa ABABABABAAB aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa CCCCCC"));
+    Parser parser = new Parser();
+    MusicPlayer musicPlayer = new MusicPlayer();
 
-        // add a while(true){} loop here
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle){
+        fileChooser.setInitialDirectory(new File("."));
     }
+
+    @FXML
+    private TextArea areaTexto;
+
+    @FXML
+    void onSaveMusicButtonClick(MouseEvent event) throws IOException {
+        Pattern pattern = new Pattern(parser.parseTextToJFugue(areaTexto.getText()));
+
+        try {
+            File filePath = fileChooser.showSaveDialog(new Stage());
+            MidiFileManager.savePatternToMidi(pattern, filePath);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @FXML
+    void onPlayMusicButtonClick(MouseEvent event) {
+        musicPlayer.playMusic(parser.parseTextToJFugue(areaTexto.getText()));
+    }
+
+    @FXML
+    void onFileButtonClick(MouseEvent event) {
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File file = fileChooser.showOpenDialog(new Stage());
+
+        try{
+            Scanner scanner = new Scanner(file);
+            while(scanner.hasNextLine()){
+                areaTexto.setText(scanner.nextLine());
+            }
+        }catch(FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void onHelloButtonClick(ActionEvent event) {
+
+    }
+
 }
