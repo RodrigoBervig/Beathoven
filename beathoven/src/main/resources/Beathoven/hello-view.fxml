@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="535.0" prefWidth="900.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="Beathoven.Beathoven">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Text fill="#222020" stroke="#d71515" strokeType="OUTSIDE" strokeWidth="0.0" text="BEATHOVEN" textAlignment="CENTER" wrappingWidth="331.8056640625">
+        <font>
+            <Font name="Roboto Bold" size="41.0" />
+        </font>
+        <VBox.margin>
+            <Insets top="30.0" />
+        </VBox.margin>
+    </Text>
+    <AnchorPane prefHeight="84.0" prefWidth="859.0">
+        <children>
+            <Button layoutX="348.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#onFileButtonClick" prefHeight="53.0" prefWidth="165.0" text="Inserir Arquivo" />
+        </children>
+    </AnchorPane>
+    <TextArea fx:id="areaTexto" prefHeight="266.0" prefWidth="863.0" />
+    <AnchorPane prefHeight="104.0" prefWidth="860.0">
+        <children>
+            <Button layoutX="513.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#onPlayMusicButtonClick" prefHeight="53.0" prefWidth="165.0" text="Tocar Musica" />
+            <Button layoutX="182.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#onSaveMusicButtonClick" prefHeight="53.0" prefWidth="165.0" text="Salvar Musica" />
+        </children>
+    </AnchorPane>
+</VBox>

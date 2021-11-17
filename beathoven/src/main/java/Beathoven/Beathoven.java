@@ -1,4 +1,4 @@
-package com.example.testejavafx;
+package Beathoven;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +16,6 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 import org.jfugue.midi.MidiFileManager;
-import org.jfugue.player.*;
 import org.jfugue.pattern.*;
 
 public class Beathoven implements Initializable {

@@ -1,4 +1,4 @@
-package Utils;
+package Beathoven.Utils;
 
 public class Commands {
 

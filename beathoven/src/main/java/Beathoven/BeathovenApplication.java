@@ -1,4 +1,4 @@
-package com.example.testejavafx;
+package Beathoven;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
