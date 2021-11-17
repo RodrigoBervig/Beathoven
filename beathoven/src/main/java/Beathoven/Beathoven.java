@@ -31,11 +31,11 @@ public class Beathoven implements Initializable {
     }
 
     @FXML
-    private TextArea areaTexto;
+    private TextArea textArea;
 
     @FXML
     void onSaveMusicButtonClick(MouseEvent event) throws IOException {
-        Pattern pattern = new Pattern(parser.parseTextToJFugue(areaTexto.getText()));
+        Pattern pattern = new Pattern(parser.parseTextToJFugue(textArea.getText()));
 
         try {
             File filePath = fileChooser.showSaveDialog(new Stage());
@@ -47,7 +47,7 @@ public class Beathoven implements Initializable {
 
     @FXML
     void onPlayMusicButtonClick(MouseEvent event) {
-        musicPlayer.playMusic(parser.parseTextToJFugue(areaTexto.getText()));
+        musicPlayer.playMusic(parser.parseTextToJFugue(textArea.getText()));
     }
 
     @FXML
@@ -59,7 +59,7 @@ public class Beathoven implements Initializable {
         try{
             Scanner scanner = new Scanner(file);
             while(scanner.hasNextLine()){
-                areaTexto.setText(scanner.nextLine());
+                textArea.setText(scanner.nextLine());
             }
         }catch(FileNotFoundException e) {
             e.printStackTrace();
