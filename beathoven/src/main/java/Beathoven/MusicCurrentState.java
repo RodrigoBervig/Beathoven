@@ -8,9 +8,7 @@ public class MusicCurrentState {
 
 	private static final int maxVolume = 127;
 
-	private static final int defaultBpm = 120;
-
-	private int bpm;
+	private static final int defaultInstrument = 0;
 
 	private int volume = 50;
 
@@ -21,21 +19,16 @@ public class MusicCurrentState {
 	private int instrument = 0;
 
 	public MusicCurrentState() {
-		this.bpm = defaultBpm;
-
-	}
-
-	public void setVolume(int volume) {
-		this.volume = volume;
 	}
 
 	public void setDefaultVolume(){
 		this.volume = defaultVolume;
 	}
+
 	public void increaseOctaveOrder() {
 		int increasedOctave = this.octaveOrder++;
 
-		if (increasedOctave < 10){
+		if (increasedOctave <= 10){
 			this.octaveOrder = increasedOctave;
 		}
 		else{
@@ -52,11 +45,10 @@ public class MusicCurrentState {
 	}
 
 	public void setInstrument(int instrument) {
-		this.instrument = instrument;
-	}
-
-	public int getBPM() {
-		return this.bpm;
+		if(this.instrument < 128) {
+			this.instrument = instrument;
+		}
+		else this.instrument = defaultInstrument;
 	}
 
 	public int getVolume() {
@@ -77,19 +69,6 @@ public class MusicCurrentState {
 
 	public String getLastUserInput(){
 		return this.lastUserInput;
-	}
-
-	public void reset() {
-
-	}
-
-	public void increaseBPM(){
-		this.bpm += 50;
-	}
-
-	public void decreaseBPM(){
-		this.bpm -= 50;
-		if (this.bpm < 1) this.bpm = defaultBpm;
 	}
 
 }

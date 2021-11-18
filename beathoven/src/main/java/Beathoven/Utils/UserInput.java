@@ -6,7 +6,8 @@ public class UserInput {
 
     public static final String DOUBLE_VOLUME = " ";
     public static final String PLAY_AGOGO = "!";
-    public static final String INCREASE_OCTAVE = "?";
+    public static final String INCREASE_OCTAVE_INPUT_1 = "?";
+    public static final String INCREASE_OCTAVE_INPUT_2 = ".";
     public static final String PLAY_TUBULAR_BELLS = "\n";
     public static final String PLAY_PAN_FLUTE = ";";
     public static final String PLAY_CHURCH_ORGAN = ",";

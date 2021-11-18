@@ -48,7 +48,8 @@ public class Parser {
 					state.setInstrument(114);
 					command = Commands.changeInstrumentCommand(114);
 					break;
-				case UserInput.INCREASE_OCTAVE:
+				case UserInput.INCREASE_OCTAVE_INPUT_1:
+				case UserInput.INCREASE_OCTAVE_INPUT_2:
 					state.increaseOctaveOrder();
 					break;
 				case UserInput.PLAY_TUBULAR_BELLS:
