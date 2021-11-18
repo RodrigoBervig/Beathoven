@@ -26,7 +26,7 @@ public class MusicCurrentState {
 	}
 
 	public void increaseOctaveOrder() {
-		int increasedOctave = this.octaveOrder++;
+		int increasedOctave = this.octaveOrder + 1;
 
 		if (increasedOctave <= 10){
 			this.octaveOrder = increasedOctave;
@@ -45,7 +45,7 @@ public class MusicCurrentState {
 	}
 
 	public void setInstrument(int instrument) {
-		if(this.instrument < 128) {
+		if(instrument < 128) {
 			this.instrument = instrument;
 		}
 		else this.instrument = defaultInstrument;

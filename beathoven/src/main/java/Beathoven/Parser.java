@@ -28,7 +28,8 @@ public class Parser {
 		}
 		else if(UserInput.isNumber(c)){
 			int newInstrument = state.getInstrument() + Integer.parseInt(c);
-			command = Commands.changeInstrumentCommand(newInstrument);
+			state.setInstrument(newInstrument);
+			command = Commands.changeInstrumentCommand(state.getInstrument());
 		}
 		else if(UserInput.isPlayHarpsichord(c)){
 			state.setInstrument(7);
