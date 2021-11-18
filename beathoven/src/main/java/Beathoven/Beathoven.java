@@ -34,7 +34,7 @@ public class Beathoven implements Initializable {
     private TextArea textArea;
 
     @FXML
-    void onSaveMusicButtonClick(MouseEvent event) throws IOException {
+    void onSaveMusicButtonClick(MouseEvent event) {
         Pattern pattern = new Pattern(parser.parseTextToJFugue(textArea.getText()));
 
         try {
@@ -58,8 +58,10 @@ public class Beathoven implements Initializable {
 
         try{
             Scanner scanner = new Scanner(file);
+            textArea.clear();
             while(scanner.hasNextLine()){
-                textArea.setText(scanner.nextLine());
+                textArea.appendText(scanner.nextLine());
+                if(scanner.hasNextLine()) textArea.appendText("\n");
             }
         }catch(FileNotFoundException e) {
             e.printStackTrace();
